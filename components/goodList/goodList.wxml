@@ -1,0 +1,23 @@
+<!--components/goodList/goodList.wxml-->
+<view class="goodList-good">
+  <!-- 商品的图片 -->
+  <view class="goodList-good-img">
+    <image src="{{url}}" mode="aspectFill" />
+  </view>
+  <!-- 商品详细的信息 -->
+  <view class="goodList-good_detail">
+    <!-- 名称 -->
+    <view class="good_detail_name">
+      {{name}}
+    </view>
+    <!-- 信息 -->
+    <view class="good_detail_brief">
+      {{brief}}
+    </view>
+    <!-- 价格 -->
+    <view class="good_detail_price">
+      <text class="price" >￥{{price}}</text>
+      <text class="oldPrice" style="display:{{oldPrice == '' ? 'none': 'inline'}};">￥{{oldPrice}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+/* miniprogram/pages/index/index.wxss */
+
+Page {
+  background-color: #ebebeb;
+}
+.weui-search-bar {
+  background-color: #ff620b;
+}
+.weui-search-bar__form, 
+.weui-search-bar__label{
+  border-radius: 100rpx;
+}
+
+/* 广告栏 */
+.banner-image {
+  width: 100%;
+  height: 100%;
+  
+}
+
+/* nav导航栏 */
+
+.navBar {
+  display: flex;
+  flex-wrap: wrap;
+  height: 320rpx;
+  align-items: center;
+  background-color: #fff;
+}
+
+.nav_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.nav_image {
+  height: 90rpx;
+  width: 90rpx;
+}
+
+.nav_text {
+  font-size: 23rpx;
+  color: #898989;
+}
+
+/* 人气推荐 */
+.goodList {
+  background-color: #fff;
+  margin: 22rpx;
+}
+.topBorder::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  height: 1rpx;
+  width: 200%;
+  top: 0;
+  transform-origin: 0 0;
+  border-top: 1rpx solid #e0e0e0;
+  transform: scale(.5);
+  z-index: 1;
+}
+.rightBorder::after {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 1rpx;
+  right: -1rpx;
+  top: 0;
+  transform-origin: 0 0;
+  border-right: 1rpx solid#e0e0e0;
+  transform: scale(.5);
+  z-index: 1;
+}
+.goodList-title {
+  padding-left: 33rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.goodList-item {
+  position: relative;
+}
+.list {
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+}
+.list .item {
+  width: 50%;
+  flex-shrink: 0;
+  position: relative;
+  /* padding: 1rpx; */
+  /* display: inline-block; */
+  /* box-sizing: border-box; */
+}

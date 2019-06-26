@@ -1,0 +1,10 @@
+<!--components/userList/userList.wxml-->
+<view class="main">
+  <image src="{{List.img}}" />
+  <view class="text" >
+    <text >{{List.text}}</text>
+  </view>
+  <view class="state" wx:if="{{List.state !== ''}}">
+    <text >({{List.state}})</text>
+  </view>
+</view>

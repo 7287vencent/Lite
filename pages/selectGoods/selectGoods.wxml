@@ -1,0 +1,86 @@
+<!--pages/goodDetails/selectGood/selectGood.wxml-->
+<view class="page">
+
+   <!-- 小图 及 品名 -->
+   <view class='section info_head'>
+      <view class='img_name_price'>
+         <view class='img'>
+            <image src='{{imgSrc}}' mode='widthFix'></image>
+         </view>
+         <view class='name_price'>
+            <view class='name'>{{goodData.name}} {{memory}} {{color}}</view>
+            <view class='price'>
+               {{price}}
+               <text wx:if="{{goodData.defaultData.price.length>1}}">{{priceOld}}</text>
+            </view>
+         </view>
+      </view>
+      <view class='sales'>
+         <view>促销</view>
+         <view class='sales_info'>
+            <view class='sales_info_item'>
+               <text>赠品</text> 赠米粉卡，内含50元话费
+            </view>
+         </view>
+      </view>
+   </view>
+   <!-- end info -->
+
+   <!-- 版本 颜色 数量 及服务 -->
+   <view class='section info_footer'>
+      <view class='version'>
+         <view>版本</view>
+         <view class='choose_v'>
+            <block wx:for="{{goodData.versionData.version}}" wx:key="*this">
+               <view class='choose_v_item {{index==vIndex?".active":""}}' data-index="{{index}}" data-memory='{{item.memory}}' data-price='{{item.price}}' bindtap='chooseV'>
+                  <text>{{item.memory}}</text>
+                  <text>{{item.price[0]}}</text>
+               </view>
+            </block>
+         </view>
+      </view>
+      <view class='color'>
+         <view>颜色</view>
+         <view class='choose_c'>
+            <block wx:for="{{goodData.versionData.colorImg}}" wx:key="*this">
+               <view class='choose_c_item {{index==cIndex?".active":""}}' data-index="{{index}}" data-src="{{item.src}}" data-color='{{item.choose}}' bindtap='chooseC'>{{item.choose}}</view>
+            </block>
+         </view>
+      </view>
+      <view class='buy_num'>
+         <view>购买数量</view>
+         <view class='choose_n'>
+            <view bindtap='sNum'>-</view>
+            <view>{{selectNum}}</view>
+            <view bindtap='aNum'>+</view>
+         </view>
+      </view>
+      <view class='service'>
+         <view>保障服务</view>
+         <view class='choose_s'>
+            <view class='service_item'>
+               <view class='{{soHave?".active":""}}' bindtap='sOne'>意外保障服务 179.00元 </view>
+               <view wx:if="{{soHave}}">
+                  <icon type='success' size="16" color="#ff6801" bindtap='sOne'></icon>
+                  <text >我已阅读</text>
+                  <navigator hover-class="none">服务条款</navigator>|
+                  <navigator hover-class="none">常见问题</navigator>
+               </view>
+            </view>
+            <view class='service_item'>
+               <view class='{{stHave?".active":""}}' bindtap='sTwo'>碎屏保障服务 99.00元 </view>
+               <view wx:if="{{stHave}}">
+                  <icon type='success' size="16" color="#ff6801" bindtap='sTwo'></icon>
+                  <text>我已阅读</text>
+                  <navigator hover-class="none">服务条款</navigator>|
+                  <navigator hover-class="none">常见问题</navigator>
+               </view>
+            </view>
+         </view>
+      </view>
+   </view>
+   <!-- end info_footer -->
+
+   <view class='section but' bindtap='toAddCart'>确定</view>
+
+</view>

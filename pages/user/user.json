@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "userList": "../../components/userList/userList",
+    "tabbar": "../../components/tabbar/tabbar"
+  }
+}

@@ -1,0 +1,64 @@
+<!-- miniprogram/pages/cart/cart.wxml -->
+<!-- <text>miniprogram/pages/cart/cart.wxml</text> -->
+<view class="container">
+  <!-- 判断购物车是否为空 -->
+  <!-- 购物车空显示的内容 -->
+  <block wx:if="{{!hasCart}}">
+    <view class="cartNull">
+      <view class="img">
+        <image src="../../assets/images/cart.png" />
+      </view>
+      <view class="text">
+        <text>购物车还是空的</text>
+      </view>
+      <view class="navIndex">
+        <text bind:tap="goIndex">到小米商城逛逛</text>
+      </view>
+    </view>
+  </block>
+  <!-- 购物车不为空时显示的内容 -->
+  <block wx:else>
+    <!-- 商品的列表 -->
+    <view class="cart_lists">
+      <block wx:for="{{cartgoods}}" wx:key="{{index}}">
+        <view class="cart_list" catch:tap="goDeleteGoods" data-index="{{index}}" data-id="{{item.id}}">
+          <!-- 勾选图标 -->
+          <icon type="success" color="{{item.select ? '#fe5821': '#aaa'}}" size="16" catch:tap="selectList" data-index="{{index}}"/>
+          <!-- 商品图标 名称 颜色 价格 -->
+          <view class="cart_list__img__name__color">
+            <view class="cart_list__img">
+              <image src="{{item.img}}" mode="widthFix" />
+            </view>
+            <view class="cart_list__name__color">{{item.name}} {{item.color}}</view>
+          </view>
+          <view class="cart_list__price">
+            {{item.num}}×
+            <text>{{item.price}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 底部购买信息 -->
+    <view class="cart_footer">
+      <!-- 结算的相关信息 -->
+      <view class="selectALL__total" bindtap="selectAll">
+        <view class="selectAll">
+          <!-- 全选图标 -->
+          <icon type="success" color="{{selectAll ? '#fe5821': '#aaa'}}" size="16" />
+          <text >全选</text>
+        </view>
+        <!-- 合计的价格 -->
+        <view class="total">
+          <text >合计:</text>
+          <text >{{totalPrice}}</text>
+        </view>
+      </view>
+      <!-- 结算按钮 -->
+      <view class="settlement {{selectAll ? '': 'on'}}">
+        <text >结算</text>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- tabbar组件 -->
+<tabbar on="cart"></tabbar>

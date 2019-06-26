@@ -1,0 +1,225 @@
+/* pages/goodDetails/selectGood/selectGood.wxss */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section {
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* 小图 及 品名  */
+
+.info_head {
+  padding: 0 30rpx;
+  margin-bottom: 15rpx;
+}
+
+.img_name_price {
+  display: flex;
+  padding: 30rpx 0 25rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.img {
+  border: 3rpx solid #dadada;
+}
+
+.img image {
+  display: block;
+  width: 160rpx;
+}
+
+.name_price {
+  margin-left: 30rpx;
+}
+
+.name_price .name {
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.name_price .price {
+  font-size: 28rpx;
+  color: #ff6801;
+}
+
+.name_price .price text {
+  font-size: 20rpx;
+  color: #898989;
+  margin-left: 15rpx;
+  text-decoration: line-through;
+}
+
+.sales {
+  display: flex;
+  padding: 35rpx 0;
+  font-size: 25rpx;
+}
+
+.sales>view:first-child {
+  color: #888;
+  margin-right: 50rpx;
+}
+
+.sales_info_item text {
+  color: #ff6801;
+  font-size: 20rpx;
+  border: 2rpx solid #ff6801;
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+  padding: 5rpx 15rpx;
+}
+
+/* 总 版本 颜色 数量 及服务 */
+
+.info_footer {
+  padding: 0 30rpx;
+  margin-bottom: 115rpx;
+  font-size: 25rpx;
+}
+
+.info_footer>view {
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.info_footer>view:last-child {
+  border-bottom: none;
+}
+
+.active {
+  color: #ff6801;
+  border-color: #ff6801 !important;
+}
+
+/* 版本 分 */
+
+.version>view:first-child {
+  padding: 45rpx 0 25rpx;
+  color: #888;
+}
+
+.choose_v {
+  padding-bottom: 15rpx;
+}
+
+.choose_v_item {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx;
+  margin-bottom: 15rpx;
+  border: 3rpx solid #dadada;
+  border-radius: 10rpx;
+}
+
+/* 颜色  分 */
+
+.color>view:first-child {
+  padding: 45rpx 0 25rpx;
+  color: #888;
+}
+
+.choose_c {
+  display: flex;
+  padding-bottom: 30rpx;
+}
+
+.choose_c_item {
+  padding: 25rpx 30rpx;
+  margin-right: 15rpx;
+  border: 3rpx solid #dadada;
+  border-radius: 10rpx;
+}
+
+/* 数量 分 */
+
+.buy_num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  color: #888;
+}
+
+.choose_n {
+  display: flex;
+  border: 3rpx solid #dadada;
+  border-radius: 10rpx;
+}
+
+.choose_n view {
+  width: 75rpx;
+  height: 75rpx;
+  text-align: center;
+  line-height: 75rpx;
+  color: black;
+}
+
+.choose_n view:nth-child(2) {
+  border-right: 1rpx solid #e5e5e5;
+  border-left: 1rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.unable {
+  color: #e5e5e5 !important;
+}
+
+/* 服务 分 */
+
+.service>view:first-child {
+  padding: 45rpx 0 10rpx;
+  color: #888;
+}
+.choose_s {
+  display: flex;
+  /* display: inline-block; */
+  /* justify-content: space-between; */
+}
+.service_item {
+  /* width: 100%; */
+  padding: 10rpx 0 25rpx;
+  flex: 1;
+  /* width: 45%; */
+}
+
+.service_item>view:first-child {
+  /* display: inline-block; */
+  width: 75%;
+  padding: 25rpx 30rpx;
+  border: 3rpx solid #dadada;
+  border-radius: 10rpx;
+  margin-bottom: 35rpx;
+}
+
+.service_item>view:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.service_item icon {
+  margin-right: 2rpx;
+}
+
+.service_item navigator {
+  margin: 0 2rpx;
+  color: #ff6801;
+}
+
+/* 确定 */
+
+.but {
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  background-color: #ff6801;
+}

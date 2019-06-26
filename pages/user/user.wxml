@@ -1,0 +1,33 @@
+<!-- miniprogram/pages/user/user.wxml -->
+<view class="container">
+  <view class="header">
+    <view class="hd-img">
+      <image src="{{userInfo.avatarUrl}}" />
+    </view>
+    <view class="hd-detail">
+      <view class="name">
+        <text>{{userInfo.nickName}}</text>
+      </view>
+      <view class="account">
+        <text>绑定小米账号</text>
+      </view>
+    </view>
+    <view class="hd-code">
+      <image src="../../assets/images/ma.png" />
+    </view>
+  </view>
+  <view class="body">
+    <view class="bd-goods">
+      <userList List="{{goods[0]}}"></userList>
+    </view>
+    <view class="bd-userData">
+      <block wx:for="{{userData}}" wx:key="index">
+        <userList List="{{item}}" class="bd-userData__border"></userList>
+      </block>
+    </view>
+    <view class="bd-setUp">
+      <userList List="{{setUp[0]}}"></userList>
+    </view>
+  </view> 
+</view> 
+<tabbar on="user"></tabbar>

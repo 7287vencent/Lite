@@ -1,0 +1,135 @@
+/* miniprogram/pages/cart/cart.wxss */
+page {
+
+  background-color: #ebebeb;
+}
+.cartNull {
+  box-sizing: border-box;
+  padding-top: 100rpx;
+  text-align: center;
+}
+.cartNull .img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background-color: #d4d4d4;
+  position: relative;
+  margin: 0 auto;
+}
+.cartNull .img image{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.cartNull .text {
+  font-size: 40rpx;
+  margin: 50rpx 0;
+}
+.cartNull .navIndex {
+  width: 90%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #f36900;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+/* 购物车有商品 */
+.cart_lists {
+  width: 100%;
+}
+
+.cart_list {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  font-size: 28rpx;
+  padding: 18rpx;
+  box-sizing: border-box;
+}
+.cart_list__img__name__color {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 15rpx;
+}
+.cart_list__img image{
+  width: 40rpx;
+  margin-right: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+.cart_list__price {
+  color: #aeaeae;
+  font-size: 26rpx;
+}
+.cart_list__price text {
+  font-size: 28rpx;
+  color: #de4f0b;
+}
+
+/* 底部合计 */
+.cart_footer{
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  bottom: 100rpx;
+  display: flex;
+}
+.selectALL__total {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.cart_footer::before,.cart_footer::after {
+  content: '';
+  position: absolute;
+  height: 1rpx;
+  width: 200%;
+  left: 0;
+  transform-origin: 0 0;
+  transform: scale(.5);
+  z-index: 1;
+}
+.cart_footer::before {
+  top: 0;
+  border-top: 1rpx solid #d8d8d8;
+}
+
+.cart_footer::after {
+  bottom: 0;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+
+.selectAll text {
+  margin-left: 10rpx;
+}
+
+.total text:nth-child(2) {
+  color: #f36900;
+}
+
+.settlement {
+  width: 27%;
+  color: #fff;
+  background-color: #fe5821;
+  text-align: center;
+  height: 99rpx;
+  line-height: 99rpx;
+}
+
+.settlement.on {
+  background-color: #aeaeae;
+}

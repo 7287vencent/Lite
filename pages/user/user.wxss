@@ -1,0 +1,75 @@
+/* miniprogram/pages/user/user.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #ebebeb;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+.container .header {
+  /* padding-top: 30rpx; */
+  width: 100%;
+  height: 170rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.header .hd-img {
+  width: 140rpx;
+  height: 140rpx;
+}
+.header .hd-img image {
+  width: 100%;
+  height: 100%;
+}
+.header .hd-detail {
+  flex: 1;
+  padding: 0 20rpx;
+  height: 110rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header .hd-detail .name {
+  font-size: 34rpx;
+}
+.header .hd-detail .account {
+  font-size: 26rpx;
+  width: 200rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #ebebeb;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.header .hd-code {
+  width: 80rpx;
+  height: 50rpx;
+}
+.header .hd-code image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 内容部分 */
+.bd-goods, .bd-userData, .bd-setUp{
+  margin-top: 20rpx;
+}
+.bd-userData__border {
+  /* position: relative; */
+}
+.bd-userData__border::after {
+  content: '';
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  border-bottom: 1px solid #ebebeb;
+}

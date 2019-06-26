@@ -1,0 +1,30 @@
+<!-- miniprogram/pages/category/category.wxml -->
+<view class="container">
+  <!-- 左边商品的标签信息 -->
+  <scroll-view scroll-y scroll-with-animation="{{true}}" class="categroy-left">
+    <view wx:for="{{categroy}}" wx:key="{{index}}" data-index="{{index}}" bindtap="switchTab" class="cate-list {{curIndex === index ? 'on': ''}}">
+      {{item[0].name}}
+    </view>
+  </scroll-view>
+  <!-- 右边 标签对应的商品信息 -->
+  <scroll-view scroll-y scroll-into-view="{{toView}}" scroll-with-animation="true" bindscroll="scrollContent" bindscrolltolower="scrollEnd" class="categroy-right">
+    <block wx:for="{{categroy}}" wx:key="inedx">
+      <view id="right-list" class="right-list" id="{{index}}">
+        <view class="right-title">
+          <text>{{item[0].name}}</text>
+        </view>
+        <view class="right-content">
+          <block wx:for="{{item}}" wx:key="idex" wx:for-item="product" wx:for-index="idex">
+            <view class="list-detail" wx:if="{{idex > 0}}">
+              <image src="{{product.picture}}" />
+              <view class="detail-name">
+                <text>{{product.desc}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<tabbar on="category"></tabbar>

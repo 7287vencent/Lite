@@ -1,0 +1,26 @@
+/* components/tabbar/tabbar.wxss */
+
+.tabbar {
+  width: 100%;
+  height: 100rpx;
+  background-color: #ffffff;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  font-size: 26rpx;
+  z-index: 99;
+}
+.shouye,.fenlei,.faxian,.gouwuche,.wode {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.5;
+}
+.icon {
+  height: 60rpx;
+}
+.on {
+  color:#f96702;
+}

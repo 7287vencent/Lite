@@ -1,0 +1,88 @@
+/* miniprogram/pages/category/category.wxss */
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+width: 0px;
+height: 0px;
+background-color: pink;
+}
+.categroy-left {
+  height: 100%;
+  width: 150rpx;
+  float: left;
+  border-right: 1px solid #ebebeb;
+  box-sizing: border-box;
+  position: fixed;
+  font-size: 30rpx;
+  padding-bottom: 100rpx;
+  box-sizing: border-box;
+}
+.categroy-left .cate-list {
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  border: 2px solid #fff;
+}
+.categroy-left .cate-list.on {
+  color: #ff4800;
+  font-size: 34rpx;
+}
+/* 右边的列表 */
+.categroy-right {
+  width: 600rpx;
+  float: right; 
+  height: 1334rpx;
+  /* height: 100%; */
+  padding-bottom: 100rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.right-title {
+  width: 100%;
+  text-align: center;
+  position: relative;  
+  padding-top: 30rpx;
+  /* font-size: 30rpx; */
+  padding-bottom: 30rpx;
+}
+ .right-title text::before, .right-title text::after {
+  content: '';
+  position: absolute;
+  width: 60rpx;
+  /* height: 1px; */
+  top: 50%;
+  border-top: 1px solid #e0e0e0;
+  /* transform: scale(.5); */
+}
+.right-title text::before { 
+  left: 30%;
+}
+.right-title text::after {
+  right: 30%;
+}
+.right-list {
+  /* height: 100%; */
+  background-color: #fff;
+}
+.right-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.right-content .list-detail {
+  flex-shrink: 0;
+  width: 33.3%;
+  height: 100%;
+  font-size: 26rpx;
+  text-align: center;
+  
+}
+.right-content .list-detail image {
+  width: 120rpx;
+  height: 120rpx;
+  padding: 10rpx;
+  /* background-color: pink; */
+}
+
+

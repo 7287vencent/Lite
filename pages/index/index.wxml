@@ -1,0 +1,65 @@
+<!-- miniprogram/pages/index/index.wxml -->
+<view class="container">
+  <!-- 搜索按钮 -->
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">
+      取消
+    </view>
+  </view>
+  <!-- 广告swiper -->
+  <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#ffffff" autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{banners}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.imgurl}}" mode="aspectFill" class="banner-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- nav导航 -->
+  <view class='navBar'>
+    <view class='nav_list' wx:for="{{navdata}}" wx:key="*this">
+      <image class='nav_image' src='{{item.url}}'></image>
+      <text class='nav_text'>{{item.word}}</text>
+    </view>
+  </view>
+  <!-- 人气推荐 -->
+  <view class="goodList">
+    <view class="goodList-title">
+      <text class="">人气推荐</text>
+    </view>
+    <view class="goodList-item">
+      <goodList
+       url="{{goodListOne.url}}"
+       name="{{goodListOne.name}}"
+       brief="{{goodListOne.brief}}"
+       price="{{goodListOne.price}}"
+       oldPrice="{{goodListOne.oldPrice}}"
+       class="topBorder"></goodList>
+    </view>
+    <view class="list">
+      <block wx:for="{{goodList}}" wx:key="{{item.id}}">
+        <view class="item topBorder rightBorder" data-id="{{item.id}}" bindtap="goDetails">
+          <goodList url="{{item.url}}"
+            name="{{item.name}}"
+            brief="{{item.brief}}"
+            price="{{item.price}}"
+            oldPrice="{{item.oldPrice}}" ></goodList>
+        </view>  
+      </block>
+    </view>
+  </view>
+  <!-- 猜你喜欢 --> 
+</view>
+<tabbar on="index"></tabbar>

@@ -1,0 +1,12 @@
+/**app.wxss**/
+@import "./weui/weui.wxss";
+
+/* .foot {
+  height: 100rpx;
+  width: 100%;
+} */
+
+.container {
+  padding-bottom: 100rpx;
+  box-sizing: border-box;
+}

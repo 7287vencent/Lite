@@ -1,0 +1,87 @@
+<!--miniprogram/pages/goodDetails/goodDetails.wxml-->
+<view class="main">
+  <!-- 轮播图片 -->
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" indicator-active-color="#ffffff" autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <block wx:for="{{swiper_img}}" wx:key="index">
+      <swiper-item >
+        <image src="{{item}}" mode="aspectFill" class="swiper_img"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 详情 -->
+  <view class="good-detail">
+    <view class="good-detail_name">{{name}}</view>
+    <view class="good-detail_brief" >
+      <block wx:for="{{brief}}" wx:key="index">
+        <text>{{item}}</text>
+      </block>
+    </view>
+    <view class="good-detail_price">
+      <text >{{defaultData.price[0]}}</text>
+      <text wx:if="{{defaultData.price.length > 1}}">{{defaultData.price[1]}}</text>
+    </view>
+  </view>
+  <!-- 具体配置详情 -->
+  <view class="details_param">
+    <block wx:for="{{details_param}}" wx:key="index">
+      <view class="details_param_item">
+        <image class="item-img"src="{{item.imgSrc}}" />
+        <view class="item-param">{{item.param}}</view>
+        <view class="item-detail">{{item.details}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 购物地址 -->
+  <view class="info-choose-version">
+    <view class="address">
+      <text class="describe" >送至</text>
+      <text class="detail">{{address.city}} {{address.district}}</text>
+      <view class="right"></view>
+    </view>
+    <view class="sales" bindtap="goSelectGoods">
+      <text class="describe">已选</text>
+      <view class="detail detail-change">
+        {{default_change.name}}
+        {{default_change.memory}}
+        {{default_change.color}}
+        <text >× {{default_change.num}}</text>
+      </view>
+      <view class="right"></view>
+    </view>
+    <view class="xiaomi">
+      <icon type="zhengque" color="#fba96a" size="42"/>
+      <text >小米自营</text>
+      <icon type="zhengque" color="#fba96a" size="42"/>
+      <text >小米发货</text>
+      <icon type="zhengque" color="#fba96a" size="42"/>
+      <text >7天无理由退货</text>
+      <view class="right"></view>
+    </view>
+  </view> 
+  <!-- 概述或参数 -->
+  <view class="summarize-parameter">
+    <view class="title">
+      <view class="summarize" bindtap="changeState">
+        <text class="{{state === 'details_img'? 'on' : ''}}">概述</text>
+      </view>
+      <view class="parameter" bindtap="changeState">
+        <text class="{{state === 'param_img'? 'on' : ''}}">参数</text>
+      </view>
+    </view>
+    <view class="state">
+      <block wx:for="{{state === 'details_img'? details_img : param_img}}" wx:key="index">
+          <image src="{{item}}" mode="widthFix"/>
+      </block>
+    </view>
+  </view>
+</view>
+<!-- 底部固定导航 -->
+<view class="shopping">
+  <view class="shopping-img" bindtap="goCart">
+    <icon type="gouwuche" color="#e0e0e0" size="40"/>
+    <text wx:if="{{allNum != 0}}">{{allNum}}</text>
+  </view>
+  <view class="addToCart" bindtap="goSelectGoods">加入购物车
+  </view>
+  <view class="buyNow">立即购买</view>
+</view>

@@ -1,0 +1,87 @@
+/* miniprogram/pages/deleteGoods/deleteGoods.wxss */
+page {
+  background-color: #ededed;
+  /* height: 100%; */
+}
+/* 标题样式 */
+.main>view:first-child {
+  padding: 30rpx 20rpx 20rpx 20rpx;
+  font-size: 28rpx;
+  color: #6e6e6e;
+}
+/* 商品名称和价格 数量和价格 通用样式 */
+.buyNum{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 32rpx;
+} 
+
+.detail {
+  margin-bottom: 20rpx;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.detail-item {
+  height: 80rpx;
+  line-height: 80rpx;
+  flex-shrink: 0;
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.detail_name_color {
+  flex: 1;
+}
+
+.detail_price_dui {
+  display: flex;
+}
+
+.detail_price {
+  margin-right: 25rpx;
+  color: #ff4700;
+}
+/* 数量和价格 */
+.buyNum picker {
+  position: relative;
+  width: 100%;
+}
+
+.buyNum picker text:last-child {
+  position: absolute;
+  right: 0;
+}
+
+/* 按钮 */
+.btn {
+  padding: 26rpx;
+  box-sizing: border-box;
+}
+
+.btn_confirm,.btn_delete {
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 42rpx;
+  color: #fff;
+}
+
+.btn_confirm {
+  background-color: #fe6900;
+  margin-bottom: 36rpx;
+}
+
+.btn_delete {
+  background-color: #e5433f;
+}

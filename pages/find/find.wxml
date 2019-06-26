@@ -1,0 +1,30 @@
+<!--miniprogram/pages/find/find.wxml-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="navBar">
+    <block wx:for="{{findNavData}}" wx:key="index">
+      <view class="navItem">
+        <image src="{{item.imgSrc}}" />
+        <view class="navName">
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 具体subject -->
+  <view class="subjects">
+    <block wx:for="{{findSubjectsData}}" wx:key="index">
+      <view class="subjectItem">
+        <view class="subjectImg">
+          <image src="{{item.subjectSrc}}"  />
+        </view>    
+        <view class="subjectName">
+          <text class="choujiang" >抽奖</text>
+          <text >{{item.text}}</text>
+          <text class="itemNum" wx:if="{{item.num !== ''}}">×{{item.num}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<tabbar on="find"></tabbar>

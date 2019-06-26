@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goodList": "../../components/goodList/goodList",
+    "tabbar": "../../components/tabbar/tabbar"
+  }
+}

@@ -1,0 +1,52 @@
+/* components/goodList/goodList.wxss */
+
+.goodList-good {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.goodList-good-img {
+  width: 100%;
+  height: 312rpx;
+  position: relative;
+}
+.goodList-good-img image {
+  width: 100%;
+  height: 100%;
+}
+.goodList-good_detail {
+  padding: 26rpx 23rpx;
+}
+.good_detail_name {
+  width:100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.good_detail_brief {
+  width:100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 25rpx;
+  color: #8c8c8c;
+}
+.good_detail_price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.good_detail_price .price {
+  color: #a36d4a;
+  font-size: 28rpx;
+  padding-right: 16rpx;
+}
+.good_detail_price .oldPrice {
+  font-size: 24rpx;
+  color: #8c8c8c;
+  text-decoration: line-through;
+}
